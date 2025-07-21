@@ -302,12 +302,6 @@ a.inner:hover{
  background-repeat: no-repeat!important;
  background-position: 50%!important;
 }
- .logo a img{
-     border: 1px solid #535050;
-    border-radius: 50%;
-    width: 55px;
-    height: auto;
- }
 
 .banner-text{
   padding-top: 100px;
