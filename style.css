@@ -339,7 +339,7 @@ a.inner:hover{
 
 .cd-headline span {
   font-size: 65px;
-  color: #F9004D;
+  color: rgb(255, 234, 0);
   font-weight: 500;
 }
 
@@ -352,19 +352,7 @@ a.inner:hover{
   padding:10px;
 
 }
-.header-social ul li a{
-  font-size: 20px;
-  color: #fff;
-  transition: all .3s ease;
-  display:block;
-  width: 40px;
-  height: 40px;
-  border: 1px solid #F9004D;
-  color: #F9004D;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 40px;
-}
+
 .header-social ul li a:hover i{
   transform: translateY(-2px);
   transition: all .3s ease;
