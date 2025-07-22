@@ -124,6 +124,8 @@ h2{
     cursor: pointer;
     color: #fff;
     font-size: 20px;
+    transition: all 0.3s ease;
+    border-radius: 4px;
 }
 .scroll-area i:hover {
     background: #fff;
@@ -131,11 +133,142 @@ h2{
 }
 /* header */
 .header-top {
-  padding: 20px 0px;
-  position: absolute;
+  position: fixed;
   z-index: 999;
   width: 100%;
-  top: 2px;
+  top: 0;
+}
+
+/* 响应式导航栏样式 */
+.navbar {
+  background: #212428;
+  border-radius: 10px;
+  margin: 10px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 0 20px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav-logo a {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 15px 0;
+  display: none;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  display: block;
+  padding: 18px 30px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background-color: #212428;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    border-radius: 0 0 10px 10px;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 0;
+    padding: 20px 0;
+  }
+
+  .nav-item {
+    margin: 10px 0;
+  }
+
+  .nav-link {
+    padding: 15px 20px;
+    font-size: 16px;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+  
+  .nav-logo a {
+    display: block;
+  }
+
+  /* 汉堡菜单动画 */
+  .nav-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .nav-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
 }
 
 
@@ -295,12 +428,11 @@ a.inner:hover{
 /* banner-text */
 .header-area{
   padding-top: 150px;
- padding-bottom: 70px;
- height: auto;
- position: relative;
- background-size: cover!important;
- background-repeat: no-repeat!important;
- background-position: 50%!important;
+  padding-bottom: 70px;
+  height: auto;
+  position: relative;
+  background-size: cover!important;
+  margin-top: 80px;
 }
 
 .banner-text{
@@ -366,6 +498,12 @@ a.inner:hover{
 .service-area{
   background-color: #191919;
 }
+
+.service-area .container {
+  margin-bottom: 60px;
+}
+
+
 
 .service-img img{
     width: 100%;
@@ -1717,6 +1855,7 @@ width:33.33%;
 .experience-tab .nav-tabs li {
     flex-grow: 1;
     display: grid;
+
 }
 .experience-tab .nav-tabs li a {
     color: #fff;

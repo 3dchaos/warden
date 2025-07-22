@@ -78,12 +78,33 @@
  	 });
 	});
 	
+	// 响应式导航栏
+	$(document).ready(function(){
+		const navToggle = document.getElementById('nav-toggle');
+		const navMenu = document.getElementById('nav-menu');
+		
+		if(navToggle && navMenu) {
+			navToggle.addEventListener('click', function() {
+				navMenu.classList.toggle('active');
+				navToggle.classList.toggle('active');
+			});
+			
+			// 点击菜单项时关闭菜单
+			document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+				navMenu.classList.remove('active');
+				navToggle.classList.remove('active');
+			}));
+		}
+	});
+
 	// Scroll Area
 	$(document).ready(function(){
 	    $('.scroll-area').click(function(){
-	      	$('html').animate({
-	        	'scrollTop' : 0,
-	      	},700);
+	      	// 使用原生scrollTo方法，更流畅
+	      	window.scrollTo({
+	        	top: 0,
+	        	behavior: 'smooth'
+	      	});
 	      	return false;
 	    });
 	    $(window).on('scroll',function(){
