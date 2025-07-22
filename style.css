@@ -140,12 +140,12 @@ h2{
 }
 
 /* 响应式导航栏样式 */
-.navbar {
-  background: #212428;
-  border-radius: 10px;
-  margin: 10px 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  padding: 0 20px;
+.header-top .navbar {
+  background: #212428 !important;
+  border-radius: 10px !important;
+  margin: 10px 20px !important;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .07), 0 2px 4px rgba(0, 0, 0, .05) !important;
+  padding: 0 20px !important;
 }
 
 .nav-container {
