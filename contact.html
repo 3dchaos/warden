@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>典狱长封挂插件-支持多个引擎</title>
+	<title>典狱长封挂插�?-支持多个引擎</title>
 	<link rel="icon" href="assets/img/logo2.png" type="image/gif" sizes="16x16">
 	<link rel="icon" href="assets/img/logo2.png" type="image/gif" sizes="18x18">
 	<link rel="icon" href="assets/img/logo2.png" type="image/gif" sizes="20x20">
@@ -53,23 +53,39 @@
   width: 120px;
   z-index: 10;
 }
+
+/* ͼƬ����ʽ������ʽ */
+.lazy-image {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  filter: blur(5px);
+}
+
+.lazy-image.loaded {
+  opacity: 1;
+  filter: blur(0);
+}
+
+.image-placeholder {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
 </style>
 
 </head>
 <body>
-  <div id="preloader">
-  	<div class="loader">
-      <span class="loader-inner-1"></span>
-      <span class="loader-inner-2"></span>
-      <span class="loader-inner-3"></span>
-      <span class="loader-inner-4"></span>
-  </div>
-</div>
+
 <header class="header-top">
   <nav class="navbar">
     <div class="nav-container">
       <div class="nav-logo">
-        <a href="index.html">典狱长</a>
+        <a href="index.html">典狱�?</a>
       </div>
       
       <div class="nav-menu" id="nav-menu">
@@ -98,7 +114,7 @@
   <!-- serviece area -->
   <section class="service-area section-padding">
     <h1 style="text-align: center;margin-top: 50px;color: aquamarine;" >联系方式</h1>
-    <p style="text-align: center;margin-top: 50px;">↓↓↓↓↓↓ 进入典狱长QQ群 ↓↓↓↓↓↓</p>
+    <p style="text-align: center;margin-top: 50px;">↓↓↓↓↓↓ 进入典狱长QQ�? ↓↓↓↓↓↓</p>
     <p style="text-align: center;margin-top: 50px;">771898654</p>
     <p style="text-align: center;margin-top: 50px;">成功提交外挂特征，即可获得典狱长封挂日卡</p>
     <p style="text-align: center;margin-top: 50px;">欢迎提意见，建议，bug反馈</p>
@@ -126,6 +142,26 @@
     <script src="assets/js/menu.js"></script>
     <script src="assets/js/script.js"></script>
     
+    <script>
+    // ͼƬ����ʽ����
+    document.addEventListener('DOMContentLoaded', function() {
+        const lazyImages = document.querySelectorAll('.lazy-image');
+        
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
+                }
+            });
+        });
+        
+        lazyImages.forEach(img => {
+            imageObserver.observe(img);
+        });
+    });
+    </script>
     
 </body>
 </html>

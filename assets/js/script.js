@@ -4,9 +4,7 @@
 	// WOW JS
 	new WOW().init();
 	
-	$(window).on('load', function(event) {
-        $('#preloader').delay(500).fadeOut(500);
-	});
+
 	$('.technology-video a').magnificPopup({
 	  	type: 'iframe',
 	});
