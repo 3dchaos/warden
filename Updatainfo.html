@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html  class="no-js" lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>典狱长封挂插件-支持多个引擎</title>
+	<link rel="icon" href="assets/img/logo2.png" type="image/gif" sizes="16x16">
+	<link rel="icon" href="assets/img/logo2.png" type="image/gif" sizes="18x18">
+	<link rel="icon" href="assets/img/logo2.png" type="image/gif" sizes="20x20">
+
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/mdb.min.css">
+  
+	<link rel="stylesheet" href="assets/css/fontawesome.all.min.css">
+	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="assets/css/animate.css">
+  <!-- headlines -->
+  <link rel="stylesheet" href="assets/css/headlines.css">
+	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+	<link rel="stylesheet" href="assets/css/normalize.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="assets/css/responsive.css">
+	<style>
+.btn-gradient {
+  width: 214px;
+  height: 50px;
+  display: inline-block;
+  padding: 8px 32px;
+  background: linear-gradient(90deg, rgba(0,123,255,0.8) 0%, rgba(0,212,255,0.6) 100%);
+  color: #fff;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s;
+  border: none;
+  box-shadow: none;
+  text-align: center;
+  line-height: 34px;
+  font-size: 20px;
+  margin-left: 45px;
+  margin-top: 45px;
+}
+.topLogo{  
+  padding-left: 45px;
+  padding-top: 45px;
+  background-color: #191919;
+}
+.header-logo-float {
+  top: 30px;
+  left: 30px;
+  width: 120px;
+  z-index: 10;
+}
+
+/* 图片渐进式加载样式 */
+.lazy-image {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  filter: blur(5px);
+}
+
+.lazy-image.loaded {
+  opacity: 1;
+  filter: blur(0);
+}
+
+.image-placeholder {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* 更新日志样式 */
+.update-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  padding: 30px;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.update-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.update-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.version-title {
+  color: #007bff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.update-date {
+  background: linear-gradient(90deg, #007bff, #00d4ff);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.feature-item {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+  height: 100%;
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+}
+
+.feature-item:hover {
+  background: #fff;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+}
+
+.feature-image {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.feature-image img {
+  border-radius: 8px;
+  max-height: 200px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.feature-text h4 {
+  color: #333;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.feature-text p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+.section-title h2 {
+  color: #333;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.section-title p {
+  color: #666;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .update-card {
+    padding: 20px;
+  }
+  
+  .version-title {
+    font-size: 2rem;
+  }
+  
+  .feature-text h4 {
+    font-size: 1.1rem;
+  }
+  
+  .feature-text p {
+    font-size: 0.9rem;
+  }
+}
+</style>
+
+</head>
+<body>
+
+<header class="header-top">
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html">典狱长</a>
+      </div>
+      
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">首页</a>
+          </li>
+          <li class="nav-item">
+            <a href="teaching.html" class="nav-link">安装方法</a>
+            </li>
+            <li class="nav-item">
+              <a href="Updatainfo.html" class="nav-link">更新日志</a>
+            </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">联系我们</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="nav-toggle" id="nav-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+</header>
+
+  <!-- serviece area -->
+  <section class="service-area section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-title text-center">
+            <h2>更新日志</h2>
+            <p>典狱长封挂插件最新版本更新内容</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 2.1版本更新 -->
+      <div class="row mb-5">
+        <div class="col-lg-12">
+          <div class="update-card">
+            <div class="update-header">
+              <h3 class="version-title">版本 2.1</h3>
+              <span class="update-date">2025-07-25</span>
+            </div>
+            
+            <div class="update-content">
+              <div class="row">
+                <!-- 客户端速度检测功能 -->
+                <div class="col-lg-6 mb-4">
+                  <div class="feature-item">
+                    <div class="feature-image">
+                      <img src="assets/img/SpeedCheat.png" alt="客户端速度检测" class="img-fluid lazy-image" loading="lazy">
+                    </div>
+                    <div class="feature-text">
+                      <h4>1. 新增客户端速度检测功能</h4>
+                      <p>全新的客户端速度检测系统，实时监控游戏内移动速度，精确识别异常加速行为，为游戏环境提供更安全的保护。</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- 超速检测封禁功能和记录 -->
+                <div class="col-lg-6 mb-4">
+                  <div class="feature-item">
+                    <div class="feature-image">
+                      <img src="assets/img/SpeedCheatLog.png" alt="超速检测记录" class="img-fluid lazy-image" loading="lazy">
+                    </div>
+                    <div class="feature-text">
+                      <h4>2. 超速检测封禁功能和记录</h4>
+                      <p>完善的超速检测封禁机制，自动记录违规行为，提供详细的检测日志，便于管理员查看和处理违规玩家。</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- DLL注入检测功能 -->
+                <div class="col-lg-6 mb-4">
+                  <div class="feature-item">
+                    <div class="feature-image">
+                      <img src="assets/img/dllCheat.png" alt="DLL注入检测" class="img-fluid lazy-image" loading="lazy">
+                    </div>
+                    <div class="feature-text">
+                      <h4>3. 新增DLL注入检测功能</h4>
+                      <p>强大的DLL注入检测系统，能够识别和阻止各种恶意DLL文件的注入行为，有效防止外挂程序的运行。</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- 优化服务端卡顿问题 -->
+                <div class="col-lg-6 mb-4">
+                  <div class="feature-item">
+                    <div class="feature-image">
+                      <img src="assets/img/DYZlogo1.png" alt="服务端优化" class="img-fluid lazy-image" loading="lazy">
+                    </div>
+                    <div class="feature-text">
+                      <h4>4. 优化服务端卡顿问题，清晰数据多线程</h4>
+                      <p>大幅优化服务端性能，采用多线程技术处理数据，显著减少卡顿现象，提升整体游戏体验和检测效率。</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+ 
+  <div class="scroll-area">
+       <i class="fa fa-angle-up"></i>
+    </div>
+    <!-- Js File -->
+    <script src="assets/js/modernizr.min.js"></script>
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/jquery.nav.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/mixitup.min.js"></script>
+    <script src="assets/js/headlines.js"></script>
+    <script src="assets/js/mdb.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/script.js"></script>
+    
+    <script>
+    // 图片渐进式加载
+    document.addEventListener('DOMContentLoaded', function() {
+        const lazyImages = document.querySelectorAll('.lazy-image');
+        
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
+                }
+            });
+        });
+        
+        lazyImages.forEach(img => {
+            imageObserver.observe(img);
+        });
+    });
+    </script>
+    
+</body>
+</html>

@@ -201,6 +201,33 @@
 .agreement-content::-webkit-scrollbar-thumb:hover {
   background: #0056b3;
 }
+
+/* 按钮容器响应式样式 */
+.button-container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.download-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 响应式设计 - 当屏幕宽度小于768px时 */
+@media (max-width: 768px) {
+  .button-container {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .download-section {
+    margin-bottom: 10px;
+  }
+}
 </style>
 
 </head>
@@ -359,6 +386,9 @@
             <a href="teaching.html" class="nav-link">安装方法</a>
           </li>
           <li class="nav-item">
+            <a href="Updatainfo.html" class="nav-link">更新日志</a>
+          </li>
+          <li class="nav-item">
             <a href="contact.html" class="nav-link">联系我们</a>
           </li>
         </ul>
@@ -393,8 +423,13 @@
             <div class="header-social">
               <ul>
                 <li>
-                  <a href="https://wwbf.lanzouw.com/iOFU731nqc7i" class="btn-gradient">下载插件</a>
-                  <a href="https://faka.dyzplugin.win/" class="btn-gradient">购买卡密</a>
+                  <div class="button-container">
+                    <div class="download-section">
+                      <a href="https://wwbf.lanzouw.com/b00mpmxeha" class="btn-gradient">下载插件</a>
+                      <p style="font-size: 14px;color: #fff; margin-top: 8px; margin-bottom: 0;">(密码:1wrp)</p>
+                    </div>
+                    <a href="https://faka.dyzplugin.win/" class="btn-gradient">购买卡密</a>
+                  </div>
                 </li>
               </ul>
             </div>
